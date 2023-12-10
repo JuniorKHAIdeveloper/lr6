@@ -1,0 +1,85 @@
+﻿<Page
+    x:Class="lr6.Calculator"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:lr6"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <!--Создаем 8 линий-->
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <!--Создаем 5 столбцов-->
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="button_back" Grid.Column="0" Grid.ColumnSpan="2" Content="Назад" Style="{StaticResource Btn}" Margin="2" Click="button_back_Click"/>
+        <!--Создаем текстовое поле-->
+        <TextBox x:Name="textbox_main" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" TextAlignment="Right" FontSize="18" Text="0" TextChanged="textbox_main_TextChanged" Padding="10,10,6,6" TextWrapping="Wrap" Margin="2" IsReadOnly="True" BorderThickness="1,1,1,1"/>
+        <!--Создаем кнопку очистки-->
+        <Button x:Name="button_clear" Grid.Column="0" Grid.Row="2" Content="C" Style="{StaticResource Btn}" Click="button_clear_Click"></Button>
+        <!--Создаем кнопку удаления-->
+        <Button x:Name="button_delete" Grid.Column="1" Grid.Row="2" Content="Del" Style="{StaticResource Btn}" Click="button_delete_Click"></Button>
+        <!--Создаем кнопку "+"-->
+        <Button x:Name="button_plus" Grid.Column="2" Grid.Row="2" Content="+" Style="{StaticResource Btn}" Click="button_plus_Click"></Button>
+        <!--Создаем кнопку "*"-->
+        <Button x:Name="button_mul" Grid.Column="3" Grid.Row="2" Content="*" Style="{StaticResource Btn}" Click="button_mul_Click"></Button>
+        <!--Создаем кнопку "±"-->
+        <Button x:Name="button_sign" Grid.Column="4" Grid.Row="2" Content="±" Style="{StaticResource Btn}" Click="button_sign_Click"></Button>
+        <!--Создаем кнопку "7"-->
+        <Button x:Name="button_7" Grid.Column="0" Grid.Row="3" Content="7" Style="{StaticResource Btn}" Background="#33FAF6F6" Click="button_digit_Click"/>
+        <!--Создаем кнопку "8"-->
+        <Button x:Name="button_8" Grid.Column="1" Grid.Row="3" Content="8" Style="{StaticResource Btn}" Background="#33FAF6F6" Click="button_digit_Click"></Button>
+        <!--Создаем кнопку "9"-->
+        <Button x:Name="button_9" Grid.Column="2" Grid.Row="3" Content="9" Style="{StaticResource Btn}" Background="#33FAF6F6" Click="button_digit_Click"></Button>
+        <!--Создаем кнопку "-"-->
+        <Button x:Name="button_minus" Grid.Column="3" Grid.Row="3" Content="-" Style="{StaticResource Btn}" Click="button_minus_Click"></Button>
+        <!--Создаем кнопку "sin"-->
+        <Button x:Name="button_sin" Grid.Column="4" Grid.Row="3" Content="sin" Style="{StaticResource Btn}" Click="button_sin_Click"></Button>
+        <!--Создаем кнопку "4"-->
+        <Button x:Name="button_4" Grid.Column="0" Grid.Row="4" Content="4" Style="{StaticResource Btn}" Background="#33FAF6F6" Click="button_digit_Click"></Button>
+        <!--Создаем кнопку "5"-->
+        <Button x:Name="button_5" Grid.Column="1" Grid.Row="4" Content="5" Style="{StaticResource Btn}" Background="#33FAF6F6" Click="button_digit_Click"></Button>
+        <!--Создаем кнопку "6"-->
+        <Button x:Name="button_6" Grid.Column="2" Grid.Row="4" Content="6" Style="{StaticResource Btn}" Background="#33FAF6F6" Click="button_digit_Click"/>
+        <!--Создаем кнопку "/"-->
+        <Button x:Name="button_div" Grid.Column="3" Grid.Row="4" Content="/" Style="{StaticResource Btn}" Click="button_div_Click"></Button>
+        <!--Создаем кнопку "cos"-->
+        <Button x:Name="button_cos" Grid.Column="4" Grid.Row="4" Content="cos" Style="{StaticResource Btn}" Click="button_cos_Click"></Button>
+        <!--Создаем кнопку "1"-->
+        <Button x:Name="button_1" Grid.Column="0" Grid.Row="5" Content="1" Style="{StaticResource Btn}" Background="#33FAF6F6" Click="button_digit_Click"></Button>
+        <!--Создаем кнопку "2"-->
+        <Button x:Name="button_2" Grid.Column="1" Grid.Row="5" Content="2" Style="{StaticResource Btn}" Background="#33FAF6F6" Click="button_digit_Click"></Button>
+        <!--Создаем кнопку "3"-->
+        <Button x:Name="button_3" Grid.Column="2" Grid.Row="5" Content="3" Style="{StaticResource Btn}" Background="#33FAF6F6" Click="button_digit_Click"></Button>
+        <!--Создаем кнопку "√x"-->
+        <Button x:Name="button_root" Grid.Column="3" Grid.Row="5" Content="√x" Style="{StaticResource Btn}" Click="button_root_Click"></Button>
+        <!--Создаем кнопку "1/x"-->
+        <Button x:Name="button_1_div_x" Grid.Column="4" Grid.Row="5" Content="1/x" Style="{StaticResource Btn}" Click="button_1_div_x_Click"></Button>
+        <!--Создаем кнопку "0"-->
+        <Button x:Name="button_0" Grid.Column="0" Grid.Row="6" Content="0" Style="{StaticResource Btn}" Background="#33FAF6F6" Click="button_0_Click"></Button>
+        <!--Создаем кнопку "."-->
+        <Button x:Name="button_point" Grid.Column="1" Grid.Row="6" Content="," Style="{StaticResource Btn}" Background="#33FAF6F6"></Button>
+        <!--Создаем кнопку "="-->
+        <Button x:Name="button_equal" Grid.Column="2" Grid.Row="6" Content="=" Style="{StaticResource Btn}" Background="#FF0992FC" Click="button_equal_Click"></Button>
+        <!--Создаем кнопку "x*x"-->
+        <Button x:Name="button_square" Grid.Column="3" Grid.Row="6" Content="x*x" Style="{StaticResource Btn}" Click="button_square_Click"></Button>
+        <!--Создаем кнопку "x!"-->
+        <Button x:Name="button_fact" Grid.Column="4" Grid.Row="6" Content="x!" Style="{StaticResource Btn}" Click="button_fact_Click"></Button>
+        <TextBlock x:Name="text_history" Grid.Column="4" HorizontalAlignment="Center" Margin="0,43,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="10" Grid.RowSpan="2"/>
+    </Grid>
+</Page>
