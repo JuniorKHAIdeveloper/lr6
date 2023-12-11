@@ -30,5 +30,6 @@
                 </NavigationViewItem>
             </NavigationView.MenuItems>
         </NavigationView>
+        <Frame x:Name="MainFrame" Grid.Column="1"/>
     </Grid>
 </Page>

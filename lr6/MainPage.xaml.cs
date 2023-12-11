@@ -31,10 +31,10 @@ namespace lr6
             switch (args.InvokedItemContainer.Tag)
             {
                 case "AboutAuthor":
-                    this.Frame.Navigate(typeof(AboutAuthor));
+                    this.MainFrame.Navigate(typeof(AboutAuthor));
                     break;
                 case "Calculator":
-                    this.Frame.Navigate(typeof(Calculator));
+                    this.MainFrame.Navigate(typeof(Calculator));
                     break;
             }
         }
